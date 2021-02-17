@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Murder Mistery</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+    </head>
+    
+    <!--
+        If you enjoy this game, remember to leave a Upvote. ⏫⏫⏫
+        
+        Follow me for more
+        
+        Share with your friends
+    
+        Created by: Alex Tușinean
+        
+        Finish Date: 15.09.2020
+        
+        Publish Date: 15.09.2020
+    -->
+    
+    <body>
+        <div id = "game">
+            <div id = "container"> </div>
+            <div id = flex-elements>
+                <i class = "fas fa-cogs" onclick = "show_hide_settings()"></i>
+                <div id = Button>Continue</div>
+                <i class="material-icons" onclick = open_close_messages()>chat</i>
+            </div>
+            <div id = "blackScreen">
+                <div id = results></div>
+                <!--<div id = replayGame onclick = replay()>Replay</div>-->
+            </div>
+        
+            <div id = "messages">
+                <button onclick = open_close_messages()>X</button>
+            </div>
+            <div id = prison></div>
+            <div id = "yourBackground"></div>
+            <div id = "settings">
+                <div id = sett_close onclick = show_hide_settings()>Close</div>
+                <p><b>Plot:</b><br />There are 25 humans, and 1 of them is a killer. The killer will murder someone every night, until there are just a few humans and the village is destroyed. You are the Sheriff and you have to find the killer before he gets to you!<br /><br><b>Gameplay:</b><br />Press "Continue" to go through one night.<br />After every night you will get up to 3 new messages, bit be careful, not all those messages are true.<br />Every human can be inprisoned, meaning that he can not kill or be killed at night. You can inprison any human by pressing the prison icon at the top-right of every human's square<br>Double click to kill any suspicious human.<br><br><b>Warning:</b> Contains Audio<br>Please keep in mind that this is just a game.</p>
+            </div>
+        </div>
+        <div id = "middle">
+            <p id = "how1">Loading</p>
+            <div id = "round"></div>
+            <div id = "round2"></div>
+        </div>
+<script src="script.js"></script>
+    </body>
+</html>

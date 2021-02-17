@@ -1,0 +1,356 @@
+body{
+    user-select:none;
+    cursor:default;
+    background:rgb(105, 213, 238);
+    font-family:"Chelsea Market";
+}
+
+.element{
+    position:relative;
+    height:20vmin; width:20vw;
+    max-height:15vh;
+    background:url("https://imgur.com/xYGtuda.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-grow:25vw;
+    user-select:none;
+    box-shadow:inset 0 0 3px black;
+}
+
+.body{
+    position:absolute;
+    left:calc(50% - 8vmin); bottom:0;
+    width:16vmin; height:55%;
+    background-color:red;
+    border-radius:50% 50% 0 0;
+    text-align:center;
+    font-size:60%;
+    line-height:10vmin;
+    box-shadow:0 0 4px black;
+}
+
+.head{
+    position:absolute;
+    left:calc(50% - 4vmin); top:2.5%;
+    width:8vmin; height:8vmin;
+    background-color:#b46f47;
+    border-radius:50%;
+    z-index:2;
+    box-shadow:0 0 4px black;
+}
+
+.head::after{
+    content:"";
+    position:absolute;
+    width:10%; height:10%;
+    background:black;
+    border-radius:10px;
+    left:25%; top:45%;
+    box-shadow:3.5vmin 0 black;
+}
+
+#container{
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:50%;
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+.hair{
+    position:absolute;
+    width:102%; height:40%;
+    left:0; top:0;
+    background:black;
+    border-radius:50% 50% 0 0;
+}
+
+#Button{
+    position:relative;
+    display:flex;
+    width:auto; height:100%;
+    padding:8px;
+    background:linear-gradient(135deg, #666, #444);
+    color:white;
+    font-size:150%;
+    border-radius:50vmax;
+    border:2px solid black;
+}
+
+#Button:active{
+    transform:scale(0.94);
+}
+
+#blackScreen{
+    position:fixed;
+    left:0; top:0;
+    width:100%; height:100%;
+    background:black;
+    z-index:5;
+    transition:opacity 1s;
+    opacity:0;
+    display:none;
+    text-align:center;
+}
+
+#messages{
+    width:100%; height:100%;
+    background:rgba(0, 0, 0, 0.75);
+    position:fixed;
+    right:0; bottom:0;
+    z-index:4;
+    overflow-y:scroll;
+    transform-origin:100% 100%;
+    transition:transform 1s;
+    transform:scale(0);
+}
+
+.message{
+    position:relative;
+    width:80%; height:auto;
+    background:rgba(250, 250, 250, 0.75);
+    color:black;
+    padding:10px;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    left:7px;
+    border-radius:0 50vmax 50vmax 0;
+    display:inline-block;
+}
+
+#messages button{
+    position:absolute;
+    color:red;
+    left:3px; top:0;
+    border:5px solid red;
+    font-weight:bolder;
+}
+
+.material-icons{
+    position:relative;
+    display:flex;
+    color:white;
+    background:#444;
+    padding:8px;
+    border-radius:50vmax;
+    border:2px solid black;
+}
+.material-icons::after{
+    content:"";
+    background:red;
+    width:10px; height:10px;
+    border-radius:50%;
+    position:absolute;
+    right:0; top:0;
+}
+
+#messages::-webkit-scrollbar{
+    display:none;
+}
+
+.target{
+    width:100%; height:100%;
+    background:url("https://imgur.com/pD3zJSD.jpg");
+    background-size:45%;
+    background-repeat:no-repeat;
+    background-position:center;
+    left:0; top:0;
+    opacity:0;
+    transition:opacity 0.5s;
+    z-index:2;
+    pointer-events:none;
+}
+
+.element:hover .target{
+    opacity:1;
+}
+
+.villager{
+    display:inline-block;
+    height:40px; width:auto;
+    top:8px; left:3px;
+    position:relative;
+}
+
+#yourBackground{
+    position:fixed;
+    width:100%; height:calc(100vmax - 100vmin);
+    bottom:0; left:0;
+    background:url("https://imgur.com/xYGtuda.jpg");
+    background-size:100vmin 100%;
+    background-position:top;
+    z-index:-1;
+}
+
+#middle{
+    width:40vmin; height:40vmin;
+    position:fixed;
+    left:50%; top:50%;
+    transform:translate(-50% , -50%);
+    background-color:rgba(225,225,225,0.3);
+    border-radius:50%;
+    box-shadow:0 0 1vmin black;
+    transition:opacity 1s;
+}
+
+#how1{
+    position:absolute;
+    left:50%; top:calc(50% - 0.75em);
+    width:auto; height:1.5em;
+    transform:translate(-50%, -50%);
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+#round, #round2{
+    position:absolute;
+    width:100%; height:1.5em;
+    border-left:6px solid white;
+    border-right:6px solid white;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    animation-iteration-count:infinite;
+    animation-duration:6s;
+    animation-name:rot;
+    border-radius:1em 0 1em 0;
+    animation-timing-function:linear;
+}
+
+#round2{
+    border-radius:0 1em 0 1em;
+    width:1.5em;
+    height:100%;
+    border-top:6px solid white;
+    border-bottom:6px solid white;
+    border-left:0;
+    border-right:0;
+}
+
+@keyframes rot{
+    50%{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+#game{
+    transition:opacity 1s;
+    opacity:0;
+}
+
+#prison{
+    position:absolute;
+    width:20vw; height:20vmin;
+    max-height:15vh;
+    left:-25vmax; bottom:5vh;
+    background:url("https://imgur.com/G1yMsmB.jpg");
+    background-size:cover;
+    background-position:center;
+    z-index:3;
+    pointer-events:none;
+}
+
+.iron{
+    position:absolute;
+    left:2px; top:2px;
+    font-size:1.05em;
+    border-radius:50%;
+    padding:2px;
+    color:#222;
+}
+
+.iron:hover{
+    background:rgba(250, 250, 250, 0.75);
+}
+
+
+#settings{
+    position:fixed;
+    width:90%; height:90%;
+    background-color:#fee;
+    box-shadow:inset 0 0 0 5px darkred;
+    left:100%; top:5%;
+    z-index:4;
+    text-align:center;
+    letter-spacing:1px;
+    word-spacing:2px;
+    overflow-y:scroll;
+}
+
+#settings p{
+    margin:1em;
+}
+
+#settings::-webkit-scrollbar{
+    display:none;
+}
+
+#audios{
+    margin-top:2em;
+    font-size:120%;
+    letter-spacing:1px;
+    word-spacing:2px;
+}
+
+.fa-cogs{
+    position:relative;
+    display:flex;
+    color:white;
+    background:#444;
+    padding:8px;
+    border-radius:50vmax;
+    border:2px solid black;
+}
+
+#flex-elements{
+    position:absolute;
+    bottom:5%; left:0;
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-around;
+}
+
+#sett_close{
+    position:relative;
+    display:block;
+    width:auto; height:auto;
+    border:1px solid black;
+    background:rgba(255, 0, 0, 0.15);
+    font-size:125%;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.death{
+    position:relative;
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+    text-align:center;
+    background:rgba(250,250,250,0.5);
+    padding-bottom:3px;
+    padding-top:3px; 
+    margin-top:5px;
+}
+
+#replayGame{
+    position:fixed;
+    bottom:5%; left:50%;
+    transform:translate(-50%);
+    color:white;
+    border:2px solid white;
+    padding:5px;
+    display:none;
+}
+
+#results{
+    position:absolute;
+    left:50%; top:50%;
+    transform:translate(-50%, -50%);
+    font-size:125%;
+}
